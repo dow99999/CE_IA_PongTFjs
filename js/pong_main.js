@@ -79,11 +79,11 @@ async function loadModel() {
 
 
 
-async function CPUPlay() {
+async function CPUPlay(target_pong) {
   if(games_played >= TRAINING_GAMES) {
-    await modelControl(pong_cpu)
+    await modelControl(target_pong)
   } else {
-    await placeholderControl(pong_cpu)
+    await placeholderControl(target_pong)
   }
 }
 
@@ -158,7 +158,8 @@ async function loop() {
   
   // Autoplay:
   // await placeholderControl(pong_user)
-  await CPUPlay();
+  await CPUPlay(pong_cpu);
+  // await CPUPlay(pong_user);
   
   // await new Promise(r => setTimeout(r, 100));
   

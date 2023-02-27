@@ -87,7 +87,7 @@ class Pong extends Collidable {
         collidables[i].velX *= -1
         collidables[i].velY += this.velY
 
-        collidables[i].velY = Math.max(collidables[i].velY, 10)
+        collidables[i].velY = Math.min(collidables[i].velY, 10)
       }
     }
   }
