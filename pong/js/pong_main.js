@@ -152,10 +152,12 @@ async function loop() {
     obj.dibuixar();
   }
   
-  if(games_played <= TRAINING_GAMES && (frame_counter % 100) == 0)
-  saveFrameData();
+  if(games_played <= TRAINING_GAMES && (frame_counter % 100) == 0) {
+    saveFrameData();
+  }
   
-  await placeholderControl(pong_user)
+  // Autoplay:
+  // await placeholderControl(pong_user)
   await CPUPlay();
   
   // await new Promise(r => setTimeout(r, 100));
@@ -274,6 +276,10 @@ async function main() {
   document.getElementById("load-model").addEventListener("click", () => {
     loadModel();
     games_played = TRAINING_GAMES;
+  })
+
+  document.getElementById("reset-game").addEventListener("click", () => {
+    playing = false
   })
 
   while (true) {
