@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>TensorFlow Pong</title>
+  <link rel="stylesheet" type="text/css" href="css/pong.css">
+  
+  <script src="js/tf.js"> </script>
+  <script src="js/Collidable.js"></script>
+  <script src="js/Pong.js"></script>
+  <script src="js/Ball.js"></script>
+  <script src="js/pong_main.js"></script>
+</head>
+
+<body>
+  <div id="stats">
+    <div id="score">0 : 0</div>
+    <div id="brain"></div>
+    Model: <input id="model-file" type="file">
+    Weights: <input id="weights-file" type="file">
+    <button id="load-model">Load Model</button>
+  </div>
+  <div id="author">
+    CE-IA_BD: Diego Muñoz Jorquera
+  </div>
+  <canvas id="pong-canvas"></canvas>
+</body>
+
+</html>
